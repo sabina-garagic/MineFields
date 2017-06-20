@@ -1,0 +1,17 @@
+{
+  "name": "mine-fields",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha *.specs.js",
+    "test:watch": "mocha *.specs.js --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "expect": "^1.20.2",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.4.2"
+  }
+}
