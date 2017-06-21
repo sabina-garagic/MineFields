@@ -9,12 +9,12 @@ const initializeHintField = (mineField) => {
 };
 
 const incrementAdjacentCounts = (hintField, i, j) => {
-  const incrementCount = (hintField, x, y) => {
+  const incrementCount = (hintField, i, j) => {
     const isMine = val => val === '*';
-    const isInBounds = (r, c) => r >= 0 && r < hintField.length && c >= 0 && c < hintField[0].length;
+    const isInBounds = (i, j) => i >= 0 && i < hintField.length && j >= 0 && j < hintField[0].length;
     
-    if (!isInBounds(x, y) || isMine(hintField[i][j])) return;   
-    hintField[x][y]++;
+    if (!isInBounds(i, j) || isMine(hintField[i][j])) return;   
+    hintField[i][j]++;
   };
 
   incrementCount(hintField, i - 1, j - 1);
@@ -27,12 +27,12 @@ const incrementAdjacentCounts = (hintField, i, j) => {
   incrementCount(hintField, i + 1, j + 1);
 };
 
-const iterate2DArray = (mineFields, iterate) => {
+const iterate2DArray = (mineFields, iterateFn) => {
 
   for (let i = 0; i < mineFields.length; i++){
     for(let j = 0; j < mineFields[0].length; j++)
     {
-      iterate(i,j);
+      iterateFn(i,j);
     }
   }
   
